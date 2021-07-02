@@ -9,15 +9,18 @@ import Navigation from './components/Navigation'
 
 export async function getStaticProps() {
 
-// Initializing a client
   const notion = new Client({ auth })
 
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const database = await notion.databases.query({ database_id })
+  const database = await notion.databases.query({ 
+    database_id,
+    filter: {
+      property: "Tags",
+      multi_select: {
+        contains: "Verb"
+      }
+    }
+  })
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       database: database.results,
@@ -25,13 +28,13 @@ export async function getStaticProps() {
   }
 }
 
-const Home = ({ database }) => {
+const Verbs = ({ database }) => {
   return (
-    <div className={styles.container} id={styles.index}>
+    <div className={styles.container} id={styles.verbs}>
       <Card database={database}/>
       <Navigation/>
     </div>
   )
 }
 
-export default Home
+export default Verbs
