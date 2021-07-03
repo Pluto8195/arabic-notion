@@ -1,15 +1,15 @@
 import { Client } from '@notionhq/client'
-import { database_id, auth } from '../config'
 
 import Card from './components/Card'
 import styles from '../styles/Home.module.css'
 
 import Navigation from './components/Navigation'
 
+const database_id = '9e0ca7ce130d495e9a4a6aee9a442919'
 
 export async function getStaticProps() {
 
-  const notion = new Client({ auth })
+  const notion = new Client({ auth: process.env.NOTION_SECRET })
 
   const database = await notion.databases.query({ 
     database_id,

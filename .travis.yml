@@ -16,4 +16,6 @@ deploy:
   on:
     all_branches: true
     condition: $TRAVIS_BRANCH =~ ^(master|main)$
-
+env:
+    global:
+      - secure: jPv7k7gQYAECBd0vj6vXlTWe/WnilXoxKqsVX3aXCy49M7pw3e+zLUGkicXViMmCTsPk+kMNtsACE4uGYg1tZYuxVMBeUOjE4zycdPMdXcuUbwc3Ijb9X58BcHKqmVshsu0k1zpd2Bz+Re/mwMRy6EK3OwhHjRFA3CeLrB+KluljaYLofBszUyfL9HXau+PVbStda+yqLwu9njDNRGJLF32ShK7G6xFY7fa5HWOxYJTaskaycBsT8ieWMF62zM8tKrCrNeI3CyCx08fBQd2bUY+47BE9EaIZ5mkPIkhp5czjh0F1TBsYRSXEGoh16EYz+Mhf2Ymz5gZMWnE6X7dk3WLcel14lVfE+RoIsPpf8kynICqYY0OVTGiuHR9ODvS1XsH2m6aofDYlyaX4tqWD+iK+n8dk/+pnTMgbLhGyoKPWEDqVpJhjVs+Lo1YY9zfM/O0nLC3xyEQcJLk25bEAZLE+Wl/rF6A8ijymq1XUmuKDJjchPAxHc1gzAnN1iphLHA5UBVtGq0iAK+RBJo1quEi/O7vJyWKAu3nyXaXFHx6mDb+EvsIIVHSojX8a6gD2UW4i1L6QoeVjuvCKTCJExHX93EBZd02M1FY1uhUWcJPHzRsjNvuAMbFYtECB+LWztd9yLA5xgZiJudakkThAb23k2fdZuY3yCUdECdvUOPY=
