@@ -66,6 +66,15 @@ table {
 	border-spacing: 0;
 }
 
+body.dark-mode {
+  color: #fff;
+  background: #363537;
+}
+
+body.light-mode {
+  color: #363537;
+  background: #fafafa;
+}
 
 :root {
   --san-font: 'Roboto Mono', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

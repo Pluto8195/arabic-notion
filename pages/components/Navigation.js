@@ -14,6 +14,9 @@ const Navigation = props => (
     <Link href="/nouns">
       <a>nouns</a>
     </Link>
+    <Link href="/nouns">
+      <a>adverbs</a>
+    </Link>
   </div>
 )
 

@@ -26,8 +26,6 @@ const Card = ({ database }) => {
     return array;
   }
 
-  console.log(wordIndex, words.length)
-
   const getNextWord = () => setWordIndex((((wordIndex + 1)%words.length)+words.length)%words.length)
   const getPreviousWord = () => setWordIndex((((wordIndex - 1)%words.length)+words.length)%words.length)
   
@@ -52,6 +50,7 @@ const Card = ({ database }) => {
 
   const { properties={} } = words[wordIndex] || {}
 
+
   const {
     Diacritic={},
     Word={},
@@ -59,11 +58,11 @@ const Card = ({ database }) => {
     Franco={}
   } = properties
 
-
   return (
     <div onClick={onClick} onMouseUp={onMouseUp} className={styles.card}>
+      <div>{'<'}</div>
       { words[wordIndex] &&
-      <>
+      <div className={styles.wordContainer}>
         <p className={styles.word} onMouseOut={() => setHover(false)} onMouseOver={() => setHover(true)}>
             {
               hover
@@ -75,9 +74,11 @@ const Card = ({ database }) => {
           ? <p className={styles.franco}>{ Eng?.rich_text[0]?.plain_text || '-'}</p>
           : <p className={styles.franco}>{ Franco?.rich_text[0]?.plain_text  || '-'}</p>
         }
-      </>
+      </div>
       }
-    
+      <div>
+       {'>'}
+      </div>
     </div>
   )
 }
